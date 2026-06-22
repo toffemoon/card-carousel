@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>卡片环形轮播 · 测试</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #050302;
+    }
+    #app canvas {
+      display: block;
+      touch-action: none;
+      cursor: grab;
+    }
+    #app canvas.dragging {
+      cursor: grabbing;
+    }
+    #vignette {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.65));
+    }
+    #caption {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 6vh;
+      text-align: center;
+      pointer-events: none;
+      color: #d9b36c;
+      font-family: "Microsoft YaHei", system-ui, sans-serif;
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+    }
+    #caption .title {
+      color: #ff9a2e;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <div id="vignette"></div>
+  <div id="caption">拖动旋转，点击卡片聚焦 — 当前：<span class="title" id="caption-title"></span></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
